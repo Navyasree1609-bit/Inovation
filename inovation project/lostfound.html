@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Lost & Found</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* PAGE DARK OVERLAY */
+.page-overlay{
+    min-height:100vh;
+    background:rgba(0,0,0,0.75);
+    color:#fff;
+}
+
+/* DARK NAVBAR */
+.navbar{
+    background:rgba(0,0,0,0.65)!important;
+    backdrop-filter:blur(10px);
+}
+.navbar-brand{
+    color:#4dabf7!important;
+    font-weight:600;
+}
+
+/* GLASS CARD DARK */
+.glass-card{
+    background:rgba(20,20,20,0.75);
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.6);
+    color:#fff;
+}
+
+/* INPUTS DARK */
+.modern-input{
+    background:#1f1f1f;
+    border:none;
+    color:#fff;
+    border-radius:30px;
+    padding:12px 18px;
+}
+.modern-input::placeholder{
+    color:#bbb;
+}
+.modern-input:focus{
+    outline:none;
+    box-shadow:0 0 8px rgba(77,171,247,0.6);
+}
+
+/* BUTTON */
+.btn-success{
+    background:#198754;
+    border:none;
+}
+.btn-primary{
+    background:#0d6efd;
+    border:none;
+}
+</style>
+
+</head>
+
+<body style="background:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429') no-repeat center center fixed; background-size:cover;">
+
+<div class="page-overlay">
+
+<nav class="navbar navbar-expand-lg shadow-sm">
+  <div class="container">
+
+    <!-- LEFT: LOGO -->
+    <a class="navbar-brand" href="index.html">Community Help</a>
+
+    <!-- CENTER: MENU -->
+    <div class="mx-auto">
+      <a class="nav-link d-inline text-white" href="blood.html">🩸 Blood Help</a>
+      <a class="nav-link d-inline text-white" href="lostfound.html">🎒 Lost & Found</a>
+      <a class="nav-link d-inline text-white" href="volunteer.html">🙋 Volunteer</a>
+    </div>
+
+    <!-- RIGHT: LOGIN / REGISTER -->
+    <div id="authButtons" class="d-flex gap-2">
+      <!-- Will be populated by updateNavbar() -->
+    </div>
+
+  </div>
+</nav>
+
+<div class="container py-5">
+
+    <h2 class="text-center fw-bold mb-4">🎒 Lost & Found</h2>
+
+    <!-- FORM CARD -->
+    <div class="glass-card p-4 mb-5">
+        <input id="itemName" class="form-control modern-input mb-3" placeholder="Item Name">
+        <textarea id="description" class="form-control modern-input mb-3" placeholder="Description"></textarea>
+        <input id="lfLocation" class="form-control modern-input mb-3" placeholder="Location">
+        <input id="date" type="date" class="form-control modern-input mb-3">
+        <input id="imageUpload" type="file" class="form-control modern-input mb-3" accept="image/*">
+        <img id="imagePreview" style="display:none; max-width:100%; height:200px; object-fit:cover; margin-bottom:10px;" />
+        <div class="text-center">
+            <button id="submitPost" class="btn btn-success px-5 py-2 rounded-pill">Submit Post</button>
+        </div>
+    </div>
+
+    <h3 class="text-center fw-bold mb-4">Recent Posts</h3>
+
+    <!-- POSTS CONTAINER -->
+    <div id="postsContainer"></div>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+protectPage();
+updateNavbar();
+new LostFoundManager();
+</script>
+</body>
+</html>

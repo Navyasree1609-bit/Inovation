@@ -1,0 +1,70 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* Dark overlay */
+.page-overlay {
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.78);
+    padding-bottom: 50px;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(0,0,0,0.6) !important;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #4dabf7 !important;
+}
+
+/* Glass Cards */
+.glass-card {
+    background: rgba(20, 20, 20, 0.75);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* Inputs */
+.modern-input {
+    border-radius: 30px;
+    padding: 12px 18px;
+    border: none;
+    background: #f1f1f1;
+    color: black;
+}
+
+.modern-input:focus {
+    box-shadow: 0 0 10px rgba(77,171,247,0.6);
+    border: none;
+}
+
+/* Buttons */
+.btn-primary {
+    background: #0d6efd;
+    border: none;
+}
+
+.btn-success {
+    background: #198754;
+    border: none;
+}
+
+.section-title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    background: rgba(0,0,0,0.6);
+}
